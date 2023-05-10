@@ -1,0 +1,8 @@
+fileignoreconfig:
+- filename: package-lock.json
+  checksum: ada2c92ecc5f8ad2bf6e366dc12052a4e636fcc317dce3db41803bd62a7407cc
+- filename: src/env.d.ts
+  checksum: 936c085b29edcabf646461d69b3ed6ef47e03c9ac7a5d12dd139639c8314136e
+- filename: src/scripts/conversations.js
+  checksum: 2cc0959638dd372836acb1edd978df5d3fad2609211cbe4211576ba1a6d14cb4
+version: "1.0"

@@ -1,0 +1,136 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<script>
+import "../scripts/conversations";
+</script>
+
+<Layout title="Lazy GPT">
+  <h1>LazyGPT</h1>
+  <ul class="info-container">
+    <li class="info-category">
+      <div>☀</div>
+      <div class="info-title">Examples</div>
+      <ul class="info">
+        <li>Explain quantum computing in simple terms</li>
+        <li>Got any creative ideas for a 10 year old’s birthday?</li>
+        <li>How do I make an HTTP request in Javascript?</li>
+      </ul>
+    </li>
+    <li class="info-category">
+      <div>⚡</div>
+      <div class="info-title">Capabilities</div>
+      <ul class="info">
+        <li>Forgets what user said earlier in the conversation</li>
+        <li>Allows user to provide follow-up corrections</li>
+        <li>Trained to decline all requests</li>
+      </ul>
+    </li>
+    <li class="info-category">
+      <div>⚠</div>
+      <div class="info-title">Limitations</div>
+      <ul class="info">
+        <li>May occasionally generate incorrect information</li>
+        <li>May occasionally produce irritating content</li>
+        <li>Limited knowledge of world and events before or after 2023</li>
+      </ul>
+    </li>
+  </ul>
+  <div>
+    <div class="conversations hidden"></div>
+    <input type="text" class="chat-input-box" autofocus />
+  </div>
+</Layout>
+
+<style lang="scss">
+  html {
+    background-color: #343541;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    text-align: center;
+  }
+  .info-container {
+    width: 50%;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    list-style: none;
+
+    .info-category {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .info-title {
+        padding: 24px;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+
+        li {
+          padding: 12px;
+          border-radius: 8px;
+          list-style: none;
+          background-color: #3e3f4b;
+          box-shadow: 0px 0px 35px -13px rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+  }
+
+  .chat-input-box {
+    margin: auto;
+    width: 50%;
+    border: none;
+    background-color: #3e3f4b;
+    color: white;
+    border-radius: 8px;
+    height: 45px;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0px 0px 35px -13px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 50px;
+    left: 25%;
+    padding: 0 12px;
+  }
+  .conversations {
+    width: 50%;
+    margin: auto;
+    max-height: 70vh;
+        overflow: scroll;
+
+    &.hidden {
+      display: none;
+    }
+  }
+</style>
+
+<style is:inline>
+
+  .messages {
+    background-color: #3e3f4b;
+    padding: 20px;
+  }
+
+  .messages:nth-of-type(even) {
+    background-color: #2c2c38;
+    margin: 8px 0;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
